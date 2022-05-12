@@ -1,0 +1,24 @@
+{
+  "name": "movies-api-rest",
+  "version": "1.0.0",
+  "description": "Creacion de proyecto consumiendo una API por medio de rest en JS de peliculas",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Brk98/Movies-api-rest.git"
+  },
+  "keywords": [
+    "javascript",
+    "api",
+    "rest"
+  ],
+  "author": "Pablo Puerto",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Brk98/Movies-api-rest/issues"
+  },
+  "homepage": "https://github.com/Brk98/Movies-api-rest#readme"
+}
