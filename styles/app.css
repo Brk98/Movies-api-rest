@@ -1,3 +1,378 @@
+:root{
+    /*Colors*/
+    --background-html: #01111e;
+    --second-color: #171d2d;
+    --second-color-degraded: #171d2d91;
+    --main-text-color:  #f6f6f6;
+    --second-text-color:  #e2e3eb;
+    --third-color: tomato;
+    --star-color: #ffd43a;
+    /*Fonts*/
+    --main-font: 'Roboto', sans-serif;
+    --second-font: 'Koulen', cursive;
+    /*Font Weight*/
+    --title-1: 700;
+    --normal-txt: 400;
+    /*Font size*/
+    --normal-text-size: 1.6rem;
+    --big-text-size: 3.3rem;
+    /*Margin box*/
+    --normal-box-padding: 20px;
+
+}
+*{
+    box-sizing: border-box;
+    width: 0;
+    margin: 0;
+}
+html{
+    background-color: var(--background-html);
+    color: var(--main-text-color);
+    font-family: var(--main-font);
+    font-size: 62.5%;
+}
 body{
-    background-color: rebeccapurple;
+    position: relative;
+    font-size: var(--normal-text-size);
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+/*Buttom return*/
+.btn-return{
+    position: absolute;
+    z-index: 2;
+    background-color: rgba(255, 255, 255, 0);
+    color: var(--main-text-color);
+    border: none;
+    margin: 1rem 0 0 0;
+    padding: 0;
+    font-size: var(--normal-text-size);
+    width: 20vw;
+    height: 5vh;
+    display:flex;
+    justify-content:space-evenly;
+    align-items: center;
+}
+.btn-return i{
+    display: block;
+    font-size: var(--big-text-size);
+}
+/*Header*/
+header{
+    width: 92%;
+    margin: 0 auto;
+    height: 20vh;
+    display: flex;
+    flex-direction: column;
+}
+/*Categories*/
+h2.title-categories{
+    width: 50%;
+    height: 50%;
+    padding: var(--normal-box-padding);
+}
+section.categories-container{
+    margin: 0 auto;
+    width: 100%;
+    height: 40%;
+    min-height: 4rem;
+    background-color: var(--second-color);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    overflow-y: hidden;
+    padding-left: 5px;
+}
+section.categories-container::-webkit-scrollbar{
+    display: none;
+}
+section.categories-container button.categories-button{
+    width: auto;
+    height: 45%;
+    margin: 0 0.5rem;
+    border: none;
+    border-radius: 0.5rem;
+    background-color: var(--main-text-color);
+    font-family: var(--main-font);
+    font-weight: var(--title-1);
+}
+section.categories-container button.button-selected{
+    background-color: var(--third-color);
+}
+.header-category-search{
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.header-category-search-container{
+    width: 100%;
+    padding: var(--normal-box-padding);
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+/*Input tex*/
+input{
+    position: absolute;
+    width: 100%;
+    height: 40%;
+    left: 0;
+    bottom: 0;
+    transform: translate(0, -35%);
+    border-radius: 15px;
+    border: none;
+    background-color: var(--second-color);
+    color: var(--main-text-color);
+    outline: none;
+    z-index: 1;
+    padding-left: 1em;
+}
+input[type=text]:focus {
+    border: 2px solid #555;
+    padding-left: 1em;
+  }
+  .btn-search{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    height: 40%;
+    width: 30%;
+    transform: translate(0, -35%);
+    border-radius: 15px;
+    border: none;
+    color: var(--second-text-color);
+    border: 3px solid var(--second-text-color);
+    background-color: var(--second-color);
+    z-index: 2;
+}
+.btn-search-cancel{
+    position: absolute;
+    z-index: 2;
+    height: 40%;
+    width: 10%;
+    right: 35%;
+    bottom: 0;
+    padding: 0;
+    transform: translate(0, -35%);
+    color: var(--main-text-color);
+    font-size: var(--big-text-size);
+    border: none;
+    background-color: rgba(255, 255, 255, 0);
+}
+/*Carrusel*/
+section.carrusel{
+    width: 100%;
+    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/*Swipper*/
+.swiper {
+    width: 60%;
+    height: 45vh;
+  }
+
+  .swiper-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 18px;
+    font-size: 22px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #171d2d;
+  }
+  /*Top movies*/
+  section.top-movies-container{
+      width: 80%;
+      margin: 0 auto;
+  }
+  section.top-movies-container .top-movies-title{
+      width: 100%;
+      padding: var(--normal-box-padding);
+  }
+  /*New movies*/
+  section.new-movies-container{
+    width: 100%;
+    margin: 0 auto;
+    padding: 10px;
+  }
+  section.new-movies-container .new-movies-title{
+      width: 100%;
+      padding: var(--normal-box-padding);
+  }
+  section .new-movies{
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    
+  }
+  section .new-movies .movie{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: auto;
+      max-height: 200px;
+  }
+  section .new-movies .movie img{
+    display: block;
+    width: 100%;
+    display: block;
+    height: auto;
+    border-radius: 10%;
+}
+.new-movies-btn{
+    display: block;
+    margin: 10px auto;
+    width: auto;
+    border: none;
+    border-radius: 0.5rem;
+    background-color: var(--main-text-color);
+    font-family: var(--main-font);
+    font-weight: var(--title-1);
+}
+/*Movie- viewer container*/
+.movie-viewer-mainContainre{
+    width: 100%;
+    height: auto;
+}
+/*Click on movie*/
+section.container-onclick-movie{
+    width: 100%;
+    height: 60vh;
+}
+.container-movie-degraded{
+    position: absolute;
+    z-index: 0;
+    width: 100%;
+    height: 60vh;
+    background-image: url('https://www.themoviedb.org/t/p/w220_and_h330_face/zFTLPipninMF4THDbdkQUZLWMEw.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    filter: blur(10px);
+}
+.container-degraded{
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 110%;
+    background: rgb(23,29,45);
+    background: linear-gradient(rgba(23,29,45,1) 0%, rgba(1,17,30,0.14359247116815477) 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.container-degraded img{
+    display: block;
+    width: 53%;
+    height: auto;
+    border-radius: 10%;
+}
+.container-tittle-ranking{
+    position: relative;
+    z-index: 2;
+    width: 90%;
+    margin: 1.5rem auto;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.container-tittle-ranking .titleMovie{
+    z-index: 2;
+    width: 50%;
+    font-family: var(--second-font);
+    text-overflow: clip;
+}
+.container-tittle-ranking .rankinContainer{
+    position: absolute;
+    width: 50%;
+    right: 0;
+    text-align: center;
+}
+.container-tittle-ranking .rankinContainer p{
+    width: 100%;
+    text-align: center;
+}
+.rankinContainer-starts{
+    width: 100%;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: var(--second-color);
+    color: var(--star-color);
+}
+/*Movies categories of the movie*/
+.containder-categoriesMovies{
+    z-index: 3;
+    width: 100%;
+    height: auto;
+    padding: 1.5rem;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+.containder-categoriesMovies .categories-button{
+    width: auto;
+    height: 45%;
+    margin: 0.5rem;
+    border: none;
+    border-radius: 0.5rem;
+    background-color: var(--main-text-color);
+    font-family: var(--main-font);
+    font-weight: var(--title-1);
+}
+/*Description Movie*/
+h3.descriptionMovie{
+    padding-left: var(--normal-box-padding);
+}
+p.description{
+    width: 90%;
+    height: auto;
+    margin: 1.5rem auto;
+}
+/*Footer*/
+footer{
+    z-index: 2;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    background-color: var(--second-color);
+    padding: 10px;
+    margin-top: auto;
+}
+footer p{
+    width: auto;
+    font-family: var(--second-font);
+}
+
+
+
+
+
+/*Modificadores*/
+.disblock{
+    display: block;
+}
+.disabled{
+    display: none;
+}
+.titleSearch{
+    position: absolute;
+}
+.header-category-search-active{
+    height: 20vh;
 }

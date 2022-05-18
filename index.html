@@ -4,12 +4,107 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>API the Movies</title>
     <link rel="stylesheet" href="./styles/app.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Koulen&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+    <title>API the Movies</title>
 </head>
 <body>
-    <h1>Movies</h1>
-
+    <button class="btn-return"><i class=" fa fa-solid fa-angle-left"></i><p>Return</p></button>
+    <header class="">
+        <div class="header-category-search header-category-search-active">
+            <h2 class="title-categories titleSearch ">Categories</h2>
+            
+                <p class="header-category-search-container ">Search...<i class="fa fa-search" aria-hidden="true"></i></p>
+                <input type="text" name="search" id="search" class="disabled">
+                <button type="button" class="btn-search disabled">Buscar</button>
+                <button type="button" class="btn-search-cancel disabled"><i class="fa fad fa-times"></i></button>
+          
+        </div>
+        <section class="categories-container">
+            <button type="button" id="category" class="categories-button button-selected">Action</button>
+            <button type="button" id="category" class="categories-button">Romance</button>
+            <button type="button" id="category" class="categories-button">Drama</button>
+            <button type="button" id="category" class="categories-button">Fantasy</button>
+            <button type="button" id="category" class="categories-button">Mistery</button>
+            <button type="button" id="category" class="categories-button">Comedy</button>
+        </section>
+    </header>
+    <section class="top-movies-container disabled">
+        <h2 class="top-movies-title">Top 10 movies</h2>
+        <!-- Swiper -->
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">1</div>
+                <div class="swiper-slide">2</div>
+                <div class="swiper-slide">3</div>
+                <div class="swiper-slide">4</div>
+                <div class="swiper-slide">5</div>
+                <div class="swiper-slide">6</div>
+                <div class="swiper-slide">7</div>
+                <div class="swiper-slide">8</div>
+                <div class="swiper-slide">9</div>
+            </div>
+        </div>
+    </section>
+    <section class="new-movies-container">
+        <h2 class="new-movies-title">New movies</h2>
+        <div class="new-movies">
+            <div class="movie">
+                <img src="https://www.themoviedb.org/t/p/w220_and_h330_face/zFTLPipninMF4THDbdkQUZLWMEw.jpg" alt="">
+            </div>
+            <div class="movie">
+                <img src="https://www.themoviedb.org/t/p/w220_and_h330_face/zFTLPipninMF4THDbdkQUZLWMEw.jpg" alt="">
+            </div>
+            <div class="movie">
+                <img src="https://www.themoviedb.org/t/p/w220_and_h330_face/zFTLPipninMF4THDbdkQUZLWMEw.jpg" alt="">
+            </div>
+            <div class="movie">
+                <img src="https://www.themoviedb.org/t/p/w220_and_h330_face/zFTLPipninMF4THDbdkQUZLWMEw.jpg" alt="">
+            </div>
+        </div>
+        <button type="button" class="new-movies-btn">See more...</button>
+    </section>
+    <!-- Click on movie -->
+    <section class="movie-viewer-mainContainre disabled">
+        <section class="container-onclick-movie">
+            <div class="container-movie-degraded">
+            </div>
+            <div class="container-degraded">
+                <img src="https://www.themoviedb.org/t/p/w220_and_h330_face/zFTLPipninMF4THDbdkQUZLWMEw.jpg" alt="">
+            </div>
+        </section>
+        <div class="container-tittle-ranking">
+            <h2 class="titleMovie">the batman</h2>
+            <div class="rankinContainer">
+                <p>Score</p>
+                <div class="rankinContainer-starts">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star-half" aria-hidden="true"></i>
+                </div>
+            </div>
+        </div>
+        <div class="containder-categoriesMovies">
+            <button type="button" id="category" class="categories-button">Action</button>
+            <button type="button" id="category" class="categories-button">Romance</button>
+            <button type="button" id="category" class="categories-button">Drama</button>
+            <button type="button" id="category" class="categories-button">Fantasy</button>
+            <button type="button" id="category" class="categories-button">Mistery</button>
+        </div>
+        <h3 class="descriptionMovie">Description</h3>
+        <p class="description">In his second year of fighting crime, Batman uncovers corruption in Gotham City that connects to his own family while facing a serial killer known as the Riddler.</p>
+    </section>
+    <footer>
+        <p>Made by brk98</p>
+    </footer>
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script src="https://kit.fontawesome.com/7f0cbabdf7.js" crossorigin="anonymous"></script>
+<script src="./src/slider.js"></script>
 <script src="./src/main.js"></script>
 </body>
 </html>
