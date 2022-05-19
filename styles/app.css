@@ -98,6 +98,7 @@ section.categories-container button.categories-button{
     background-color: var(--main-text-color);
     font-family: var(--main-font);
     font-weight: var(--title-1);
+    white-space: nowrap;
 }
 section.categories-container button.button-selected{
     background-color: var(--third-color);
@@ -187,6 +188,9 @@ section.carrusel{
     font-weight: bold;
     color: #fff;
     background-color: #171d2d;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
   }
   /*Top movies*/
   section.top-movies-container{

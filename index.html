@@ -12,7 +12,7 @@
     <title>API the Movies</title>
 </head>
 <body>
-    <button class="btn-return"><i class=" fa fa-solid fa-angle-left"></i><p>Return</p></button>
+    <button class="btn-return disabled"><i class=" fa fa-solid fa-angle-left"></i><p>Return</p></button>
     <header class="">
         <div class="header-category-search header-category-search-active">
             <h2 class="title-categories titleSearch ">Categories</h2>
@@ -24,46 +24,24 @@
           
         </div>
         <section class="categories-container">
-            <button type="button" id="category" class="categories-button button-selected">Action</button>
-            <button type="button" id="category" class="categories-button">Romance</button>
-            <button type="button" id="category" class="categories-button">Drama</button>
-            <button type="button" id="category" class="categories-button">Fantasy</button>
-            <button type="button" id="category" class="categories-button">Mistery</button>
-            <button type="button" id="category" class="categories-button">Comedy</button>
+            <!-- <button type="button" id="category" class="categories-button button-selected">Action</button> -->
         </section>
     </header>
-    <section class="top-movies-container disabled">
+    <section class="top-movies-container">
         <h2 class="top-movies-title">Top 10 movies</h2>
         <!-- Swiper -->
         <div class="swiper mySwiper">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide">1</div>
-                <div class="swiper-slide">2</div>
-                <div class="swiper-slide">3</div>
-                <div class="swiper-slide">4</div>
-                <div class="swiper-slide">5</div>
-                <div class="swiper-slide">6</div>
-                <div class="swiper-slide">7</div>
-                <div class="swiper-slide">8</div>
-                <div class="swiper-slide">9</div>
+            <div class="swiper-wrapper" id="topMoviesContainer">
+                <!-- <div class="swiper-slide">1</div> -->
             </div>
         </div>
     </section>
     <section class="new-movies-container">
-        <h2 class="new-movies-title">New movies</h2>
+        <h2 class="new-movies-title">Upcoming</h2>
         <div class="new-movies">
-            <div class="movie">
+            <!-- <div class="movie">
                 <img src="https://www.themoviedb.org/t/p/w220_and_h330_face/zFTLPipninMF4THDbdkQUZLWMEw.jpg" alt="">
-            </div>
-            <div class="movie">
-                <img src="https://www.themoviedb.org/t/p/w220_and_h330_face/zFTLPipninMF4THDbdkQUZLWMEw.jpg" alt="">
-            </div>
-            <div class="movie">
-                <img src="https://www.themoviedb.org/t/p/w220_and_h330_face/zFTLPipninMF4THDbdkQUZLWMEw.jpg" alt="">
-            </div>
-            <div class="movie">
-                <img src="https://www.themoviedb.org/t/p/w220_and_h330_face/zFTLPipninMF4THDbdkQUZLWMEw.jpg" alt="">
-            </div>
+            </div> -->
         </div>
         <button type="button" class="new-movies-btn">See more...</button>
     </section>
@@ -102,9 +80,10 @@
     <footer>
         <p>Made by brk98</p>
     </footer>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 <script src="https://kit.fontawesome.com/7f0cbabdf7.js" crossorigin="anonymous"></script>
-<script src="./src/slider.js"></script>
-<script src="./src/main.js"></script>
+<script src="./src/main.js" type="module"></script>
+<!-- <script src="./src/slider.js"></script> -->
 </body>
 </html>
