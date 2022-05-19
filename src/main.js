@@ -14,8 +14,7 @@ new Promise(function(resolve){
     closureUpcoming.printUpcomingMovies();
 })
 /*Onclick Upcoming Movies*/
-const loadMoreUpcomingMovies = document.querySelector('.new-movies-btn');
-loadMoreUpcomingMovies.addEventListener('click',function(){closureUpcoming.printUpcomingMovies();});
+getUpcomingMoviesObject.loadMoreUpcomingMovies.addEventListener('click',function(){closureUpcoming.printUpcomingMovies();});
 
 
 getCatergoriesNames();
