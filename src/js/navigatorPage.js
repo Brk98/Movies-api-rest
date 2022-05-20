@@ -1,3 +1,5 @@
+
+
 window.addEventListener('DOMContentLoaded', navigatorPage, false);
 window.addEventListener('hashchange', navigatorPage, false);
 
