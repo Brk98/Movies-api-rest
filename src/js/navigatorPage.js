@@ -1,4 +1,3 @@
-/*Master*/
 import{getTopMovies} from './getTopMovies.js';
 import { getCatergoriesNames } from './getCategories.js';
 import{getUpcomingMoviesObject} from './getUpcomingMovies.js';
