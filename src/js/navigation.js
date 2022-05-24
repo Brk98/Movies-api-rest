@@ -6,7 +6,6 @@ import {nodes} from './nodes.js'
 
 async function showMainPage(){
     location.hash = "Home_page";
-    console.log('Main page');
     //Remove all the event listeners
     hideMoviePage();
     nodes.search.classList.remove('disabled');
@@ -21,14 +20,14 @@ async function showMainPage(){
     new Promise(function(resolve){
         resolve(getUpcomingMoviesObject.getUpcomingMovies());
     }).then(function(results){
-        nodes.see_more_btn.remove();
+        document.querySelector('.new-movies-btn').remove();
         const closureUpcoming = getUpcomingMoviesObject.closureUpcomingMovies();
         closureUpcoming();
         const btnSeeMore = document.createElement('button');
         btnSeeMore.setAttribute('type','button');
         btnSeeMore.textContent="See more";
         btnSeeMore.classList.add('new-movies-btn');
-        btnSeeMore.addEventListener('click',function(){closureUpcoming(); console.log('Hillo');});
+        btnSeeMore.addEventListener('click',function(){closureUpcoming();});
         nodes.list_movies.appendChild(btnSeeMore);
     })
     /*Onclick Upcoming Movies*/
