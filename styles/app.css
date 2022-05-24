@@ -73,7 +73,12 @@ h2.title-categories{
     height: 50%;
     padding: var(--normal-box-padding);
 }
-section.categories-container{
+section.categories-main-container{
+    width: 90vw;
+    height: auto;
+    margin: 0 auto;
+}
+div.categories-container{
     margin: 0 auto;
     width: 100%;
     height: 40%;
@@ -86,10 +91,10 @@ section.categories-container{
     overflow-y: hidden;
     padding-left: 5px;
 }
-section.categories-container::-webkit-scrollbar{
+div.categories-container::-webkit-scrollbar{
     display: none;
 }
-section.categories-container button.categories-button{
+div.categories-container button.categories-button{
     width: auto;
     height: 45%;
     margin: 0 0.5rem;
@@ -100,7 +105,7 @@ section.categories-container button.categories-button{
     font-weight: var(--title-1);
     white-space: nowrap;
 }
-section.categories-container button.button-selected{
+div.categories-container button.button-selected{
     background-color: var(--third-color);
 }
 .header-category-search{

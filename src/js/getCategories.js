@@ -1,8 +1,9 @@
 import{URL_IMAGE, api} from './apiAxios.js';
+import { nodes } from './nodes.js';
 export async function getCatergoriesNames(){
     const {data} = await api('genre/movie/list');
     const categories = data.genres;
-    const categoryContainer = document.querySelector('.categories-container');
+    nodes.categories_container.innerHTML = "";
     categories.forEach(category => {
         const buttonCategory = document.createElement('button');
         buttonCategory.type = 'button';
@@ -11,6 +12,6 @@ export async function getCatergoriesNames(){
         const categoryTitleText = document.createTextNode(category.name);
 
         buttonCategory.appendChild(categoryTitleText);
-        categoryContainer.appendChild(buttonCategory);
+        nodes.categories_container.appendChild(buttonCategory);
     });
 }

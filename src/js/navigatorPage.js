@@ -1,9 +1,13 @@
-import{getTopMovies} from './getTopMovies.js';
-import { getCatergoriesNames } from './getCategories.js';
-import{getUpcomingMoviesObject} from './getUpcomingMovies.js';
+import { navigator } from "./navigation.js";
+import {nodes} from "./nodes.js";
 
 window.addEventListener('DOMContentLoaded', navigatorPage, false);
 window.addEventListener('hashchange', navigatorPage, false);
+
+nodes.btn_return.addEventListener('click',function(){
+    homePage();
+})
+
 
 function navigatorPage(){
     if(location.hash.startsWith('#trends')){
@@ -23,26 +27,20 @@ function trendsPage(){
     console.log('Trends page');
 }
 function homePage(){
-    console.log('Home page');
-        /*Clousere para el lazy loading de Upcoming Movies*/
-        let closureUpcoming = function(){};
-        new Promise(function(resolve){
-            resolve(getUpcomingMoviesObject.getUpcomingMovies());
-        }).then(function(results){
-            closureUpcoming = getUpcomingMoviesObject.closureUpcomingMovies();
-            closureUpcoming.printUpcomingMovies();
-        })
-        /*Onclick Upcoming Movies*/
-        getUpcomingMoviesObject.loadMoreUpcomingMovies.addEventListener('click',function(){closureUpcoming.printUpcomingMovies();});
-    getTopMovies();
-    getCatergoriesNames();
+    navigator.showMainPage();
 }
 function searchPage(){
     console.log('Search page');
 }
 function moviePage(){
-    console.log('Movie page');
+    navigator.shoeMoviePage();
 }
 function categoryPage(){
     console.log('Categories page');
 }
+
+export const pages = {
+    'moviePage' : moviePage,
+    'categoryPage' : categoryPage,
+}
+
