@@ -21,6 +21,7 @@ export const nodes = {
     list_movies_container : $('.new-movies'),
     list_movies_title: $('new-movies-title'),
     list_movies_btn_see: $('button.new-movies-btn'),
+    see_more_btn: $('.new-movies-btn'),
     //Movie details
     movie_viewer: $('.movie-viewer-mainContainre'),
     movie_background: $('section.container-onclick-movie'),

@@ -8,17 +8,17 @@ const loadMoreUpcomingMovies = document.querySelector('.new-movies-btn');
 async function getUpcomingMovies(){
     //Reset the Array to avoid data duplication in UI
     moviesList.splice(0,moviesList.length);
-    console.log(moviesList);
     const {data} = await api('movie/upcoming');
     const upcomingMovies = data.results;
     moviesList.push(...upcomingMovies);
 }
 function closureUpcomingMovies(){
-    let counterMovies = moviesList.length;
+    let counterMovies = 0;
     nodes.list_movies_container.innerHTML = "";
     nodes.list_movies_btn_see.textContent='See more';
-    return{
-        printUpcomingMovies: ()=>{
+
+    function printUpcomingMovies(){
+            counterMovies = moviesList.length;
             let defaultIndex = 6;
             if(counterMovies<=5){
                 defaultIndex = counterMovies
@@ -42,7 +42,7 @@ function closureUpcomingMovies(){
             }
             
         }
-    }
+        return printUpcomingMovies;
 }
 
 
