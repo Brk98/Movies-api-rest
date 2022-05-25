@@ -17,7 +17,7 @@ function navigatorPage(){
     }else if(location.hash.startsWith('#movie=')){
         moviePage();
     }else if(location.hash.startsWith('#category=')){
-        categoryPage();
+        // categoryPage();
     }else{
         homePage();
     }
@@ -36,7 +36,7 @@ function moviePage(){
     navigator.shoeMoviePage();
 }
 function categoryPage(){
-    console.log('Categories page');
+    navigator.showCategoryPage();
 }
 
 export const pages = {

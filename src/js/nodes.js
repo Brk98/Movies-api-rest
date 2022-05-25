@@ -19,7 +19,7 @@ export const nodes = {
     top_movies_container: $('#topMoviesContainer'),
     list_movies: $('section.new-movies-container'),
     list_movies_container : $('.new-movies'),
-    list_movies_title: $('new-movies-title'),
+    list_movies_title: $('.new-movies-title'),
     list_movies_btn_see: $('button.new-movies-btn'),
     see_more_btn: $('.new-movies-btn'),
     //Movie details
@@ -34,4 +34,5 @@ export const nodes = {
     movie_description_title: $('h3.descriptionMovie'),
     movie_description: $('p.description'),
     btn_return: $('.btn-return'),
+    movies_title: $('.new-movies-title'),
 };

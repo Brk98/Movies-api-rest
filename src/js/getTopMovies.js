@@ -3,6 +3,7 @@ import { nodes } from './nodes.js';
 import { clickMovie } from '../main.js';
 
 export async function getTopMovies(){
+    nodes.list_movies_title.textContent='Upcoming';
     const {data} = await api('trending/movie/day');
     const movies = data.results.slice(0,10);
     movies.forEach(movie => {

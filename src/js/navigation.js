@@ -3,6 +3,7 @@ import{getTopMovies} from './getTopMovies.js';
 import { getCatergoriesNames } from './getCategories.js';
 import{getUpcomingMoviesObject} from './getUpcomingMovies.js';
 import {nodes} from './nodes.js'
+import {getMoviesByCategoryObject} from './getMoviesByCategory.js';
 
 async function showMainPage(){
     location.hash = "Home_page";
@@ -50,6 +51,15 @@ function showMoviePage(){
     nodes.movie_description_title.classList.remove('disabled');
     nodes.movie_description.classList.remove('disabled');
 }
+function hideMainPage(){
+    nodes.main_title.classList.add('disabled');
+    nodes.search_container.classList.add('disabled');
+    nodes.categories.classList.add('disabled');
+    nodes.top_movies.classList.add('disabled');
+    nodes.list_movies.classList.add('disabled');
+    nodes.header.classList.add('disabled');
+    nodes.search.classList.add('disabled');
+}
 function hideMoviePage(){
     nodes.btn_return.classList.add('disabled');
     nodes.movie_viewer.classList.add('disabled');
@@ -58,7 +68,34 @@ function hideMoviePage(){
     nodes.movie_description.classList.add('disabled');
 }
 
-
+function showCategoryPage(){
+    hideMainPage();
+    nodes.categories.classList.remove('disabled');
+    nodes.main_title.classList.remove('disabled');
+    nodes.search_container.classList.remove('disabled');
+    nodes.list_movies.classList.remove('disabled');
+    nodes.header.classList.remove('disabled');
+    nodes.search.classList.remove('disabled');
+    nodes.btn_return.classList.remove('disabled');
+    //Get the id from url
+    const [_, categoryData] = location.hash.split('=');
+    const [categoryId, categoryName] = categoryData.split('-');
+       /*Clousere para el lazy loading de Upcoming Movies*/
+       let closureUpcomingCategory = function(){};
+       new Promise(function(resolve){
+           resolve(getMoviesByCategoryObject.getMoviesByCategory(categoryId));
+       }).then(function(results){
+           document.querySelector('.new-movies-btn').remove();
+           const closureUpcomingCategory = getMoviesByCategoryObject.closureMoviesByCategory();
+           closureUpcomingCategory();
+           const btnSeeMore = document.createElement('button');
+           btnSeeMore.setAttribute('type','button');
+           btnSeeMore.textContent="See more";
+           btnSeeMore.classList.add('new-movies-btn');
+           btnSeeMore.addEventListener('click',function(){closureUpcomingCategory();});
+           nodes.list_movies.appendChild(btnSeeMore);
+       })
+}
 
 
 
@@ -69,5 +106,6 @@ function hideMoviePage(){
 export const navigator ={
     'showMainPage': showMainPage,
     'shoeMoviePage': showMoviePage,
+    'showCategoryPage': showCategoryPage,
 }
 
