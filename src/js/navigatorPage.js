@@ -17,10 +17,12 @@ function navigatorPage(){
     }else if(location.hash.startsWith('#movie=')){
         moviePage();
     }else if(location.hash.startsWith('#category=')){
-        // categoryPage();
+        categoryPage();
     }else{
         homePage();
     }
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTo = 0;
 }
 
 function trendsPage(){
