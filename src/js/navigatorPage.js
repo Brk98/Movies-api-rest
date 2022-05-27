@@ -6,7 +6,7 @@ window.addEventListener('DOMContentLoaded', navigatorPage, false);
 window.addEventListener('hashchange', navigatorPage, false);
 
 nodes.btn_return.addEventListener('click',function(){
-    homePage();
+    location.hash="mainPage"
 })
 
 
@@ -16,6 +16,7 @@ function navigatorPage(){
     }else if(location.hash.startsWith('#search=')){
         searchPage();
     }else if(location.hash.startsWith('#movie=')){
+        hideSearchSection();
         moviePage();
     }else if(location.hash.startsWith('#category=')){
         const [_, categoryData] = location.hash.split('=');
@@ -35,9 +36,10 @@ function trendsPage(){
 }
 function homePage(){
     navigator.showMainPage();
+    hideSearchSection();
 }
 function searchPage(){
-    console.log('Search page');
+    navigator.showSearchPage();
 }
 function moviePage(){
     navigator.shoeMoviePage();
@@ -45,7 +47,15 @@ function moviePage(){
 function categoryPage(){
     navigator.showCategoryPage();
 }
+function hideSearchSection(){
+    nodes.searchbox.classList.add('disabled');
+    nodes.searchbox_btn.classList.add('disabled');
+    nodes.searchbox_btn_cancel.classList.add('disabled');
 
+    nodes.search.classList.remove('hideUp');
+    nodes.search.classList.remove('showDonwnSearch');
+
+}
 export const pages = {
     'moviePage' : moviePage,
     'categoryPage' : categoryPage,

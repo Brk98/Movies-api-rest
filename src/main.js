@@ -38,5 +38,7 @@ nodes.searchbox_btn_cancel.addEventListener('click', function(){
 });
 
 
-
+nodes.searchbox_btn.addEventListener('click', function(){
+    location.hash = "search=" + nodes.searchbox.value;
+});
 

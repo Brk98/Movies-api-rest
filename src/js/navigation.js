@@ -97,6 +97,11 @@ function showCategoryPage(){
        })
 }
 
+function showSearchPage(){
+    nodes.list_movies.classList.remove('disabled');
+    nodes.header.classList.remove('disabled');
+}
+
 
 
 
@@ -107,5 +112,6 @@ export const navigator ={
     'showMainPage': showMainPage,
     'shoeMoviePage': showMoviePage,
     'showCategoryPage': showCategoryPage,
+    'showSearchPage': showSearchPage,
 }
 
