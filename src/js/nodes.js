@@ -8,11 +8,11 @@ export const nodes = {
     //Main page
     header:  $('header'),
     main_title: $('h2.title-categories'),
-    search: $('p.header-category-search-container'),
+    search: $('button.header-category-search-container'),
     search_container: $('.header-category-search'),
     searchbox: $('input#search'),
     searchbox_btn: $('button.btn-search'),
-    searchbox_btn_cancel: $('btn-search-cancel'),
+    searchbox_btn_cancel: $('.btn-search-cancel'),
     categories: $('section.categories-main-container'),
     categories_container: $('.categories-container'),
     top_movies: $('section.top-movies-container'),

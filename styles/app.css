@@ -116,8 +116,14 @@ div.categories-container button.button-selected{
     justify-content: space-between;
 }
 .header-category-search-container{
-    width: 100%;
-    padding: var(--normal-box-padding);
+    width: auto;
+    margin-left: auto;
+    background-color: #ffffff00;
+    color: var(--main-text-color);
+    font-size: var(--normal-text-size);
+    margin: none;
+    border: none;
+    padding-right: var(--normal-box-padding);
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -384,4 +390,59 @@ footer p{
 }
 .header-category-search-active{
     height: 20vh;
+}
+
+
+/*Transitions*/
+.hideUp{
+  animation: hideUp 1s ease-in-out both;
+}
+.hideUpCancel{
+    animation: hideUpCancel 1s ease-in-out both;
+  }
+.showDonwn{
+    animation: fadeIn 1s ease-in both;   
+}
+.showDonwnSearch{
+    animation: fadeInSearch 1s ease-in both;   
+}
+@keyframes hideUp {
+    from {
+		opacity: 1;
+		transform: translate3d(0, 0, 0);
+	}
+	to {
+		opacity: 0;
+		transform: translate3d(0, -35%, 0);
+	}
+}
+@keyframes hideUpCancel {
+    from {
+		opacity: 1;
+		transform: translate3d(0, -35%, 0);
+	}
+	to {
+		opacity: 0;
+		transform: translate3d(0, -20vh, 0);
+	}
+}
+@keyframes fadeInSearch {
+    from {
+		opacity: 0;
+		transform: translate3d(0, -60%, 0);
+	}
+	to {
+		opacity: 1;
+		transform: translate3d(0, 0, 0);
+	}
+}
+@keyframes fadeIn {
+    from {
+		opacity: 0;
+		transform: translate3d(0, -60%, 0);
+	}
+	to {
+		opacity: 1;
+		transform: translate3d(0, -35%, 0);
+	}
 }
