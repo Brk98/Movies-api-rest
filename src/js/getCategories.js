@@ -28,7 +28,6 @@ function printCategories(categories, id = 'no-selected'){
         nodes.categories_container.appendChild(buttonCategory);
         //Add evente listener to each category
         buttonCategory.addEventListener('click',function(){
-            nodes.list_movies_title.textContent= `${category.name}`;
             getCatergoriesNames(category.id);
             location.hash = "#category=" + category.id + "-" + category.name;
             navigator.showCategoryPage();

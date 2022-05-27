@@ -83,7 +83,7 @@ function showCategoryPage(){
        /*Clousere para el lazy loading de Upcoming Movies*/
        let closureUpcomingCategory = function(){};
        new Promise(function(resolve){
-           resolve(getMoviesByCategoryObject.getMoviesByCategory(categoryId));
+           resolve(getMoviesByCategoryObject.getMoviesByCategory(Number(categoryId)));
        }).then(function(results){
            document.querySelector('.new-movies-btn').remove();
            const closureUpcomingCategory = getMoviesByCategoryObject.closureMoviesByCategory();
