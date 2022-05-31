@@ -1,12 +1,13 @@
 import { navigator } from "./navigation.js";
 import {nodes} from "./nodes.js";
 import {getCatergoriesNames} from "./getCategories.js"
+import { getMovieDetail } from './getMovieDetails.js';
 
 window.addEventListener('DOMContentLoaded', navigatorPage, false);
 window.addEventListener('hashchange', navigatorPage, false);
 
 nodes.btn_return.addEventListener('click',function(){
-    location.hash="mainPage"
+    history.back();
 })
 
 
@@ -15,9 +16,12 @@ function navigatorPage(){
         trendsPage();
     }else if(location.hash.startsWith('#search=')){
         searchPage();
+        const [_, searchData] = location.hash.split('=');
+        
     }else if(location.hash.startsWith('#movie=')){
         hideSearchSection();
         moviePage();
+
     }else if(location.hash.startsWith('#category=')){
         const [_, categoryData] = location.hash.split('=');
         const [categoryId, categoryName] = categoryData.split('-');
@@ -42,6 +46,8 @@ function searchPage(){
     navigator.showSearchPage();
 }
 function moviePage(){
+    const [_, movieId] = location.hash.split('=');
+    getMovieDetail(movieId);
     navigator.shoeMoviePage();
 }
 function categoryPage(){

@@ -2,10 +2,7 @@ import { pages } from "./js/navigatorPage.js";
 import { nodes } from "./js/nodes.js";
 
 
-//Assign to each movie the ID and function
-export function clickMovie(id){
-    pages.moviePage();
-}
+
 
 
 nodes.search.addEventListener('click', function(){
@@ -39,6 +36,6 @@ nodes.searchbox_btn_cancel.addEventListener('click', function(){
 
 
 nodes.searchbox_btn.addEventListener('click', function(){
-    location.hash = "search=" + nodes.searchbox.value;
+    location.hash = "search=" + nodes.searchbox.value.trim();
 });
 

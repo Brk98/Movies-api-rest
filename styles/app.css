@@ -270,7 +270,7 @@ section.container-onclick-movie{
     z-index: 0;
     width: 100%;
     height: 60vh;
-    background-image: url('https://www.themoviedb.org/t/p/w220_and_h330_face/zFTLPipninMF4THDbdkQUZLWMEw.jpg');
+    /* background-image: url('https://www.themoviedb.org/t/p/w220_and_h330_face/zFTLPipninMF4THDbdkQUZLWMEw.jpg'); */
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -395,16 +395,16 @@ footer p{
 
 /*Transitions*/
 .hideUp{
-  animation: hideUp 1s ease-in-out both;
+  animation: hideUp 0.5s ease-in-out both;
 }
 .hideUpCancel{
-    animation: hideUpCancel 1s ease-in-out both;
+    animation: hideUpCancel 0.5s ease-in-out both;
   }
 .showDonwn{
-    animation: fadeIn 1s ease-in both;   
+    animation: fadeIn 0.5s ease-in both;   
 }
 .showDonwnSearch{
-    animation: fadeInSearch 1s ease-in both;   
+    animation: fadeInSearch 0.5s ease-in both;   
 }
 @keyframes hideUp {
     from {

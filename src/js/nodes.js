@@ -25,7 +25,8 @@ export const nodes = {
     //Movie details
     movie_viewer: $('.movie-viewer-mainContainre'),
     movie_background: $('section.container-onclick-movie'),
-    movie_poster: $('div.container-degraded img'),
+    movie_poster_degrated: $('.container-movie-degraded'),
+    movie_poster: $('.container-degraded'),
     movie_title: $('h2.titleMovie'),
     movie_scrore: $('div.rankinContainer-starts'),
     movie_score_star: $('i.fa-star'),

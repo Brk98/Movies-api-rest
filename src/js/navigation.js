@@ -4,6 +4,7 @@ import { getCatergoriesNames } from './getCategories.js';
 import{getUpcomingMoviesObject} from './getUpcomingMovies.js';
 import {nodes} from './nodes.js'
 import {getMoviesByCategoryObject} from './getMoviesByCategory.js';
+import {getMoviesBySearchObject} from './getMoviesSearch.js';
 
 async function showMainPage(){
     location.hash = "Home_page";
@@ -70,6 +71,7 @@ function hideMoviePage(){
 
 function showCategoryPage(){
     hideMainPage();
+    hideMoviePage();
     nodes.categories.classList.remove('disabled');
     nodes.main_title.classList.remove('disabled');
     nodes.search_container.classList.remove('disabled');
@@ -98,8 +100,41 @@ function showCategoryPage(){
 }
 
 function showSearchPage(){
+    hideMainPage();
+    hideMoviePage()
     nodes.list_movies.classList.remove('disabled');
+    nodes.list_movies_title.classList.add('disabled');
     nodes.header.classList.remove('disabled');
+
+    nodes.search_container.classList.remove('disabled');
+    nodes.searchbox.classList.remove('disabled');
+    nodes.searchbox_btn.classList.remove('disabled');
+    nodes.searchbox_btn_cancel.classList.add('disabled');
+
+    nodes.btn_return.classList.remove('disabled');
+
+    const [_, searchData] = location.hash.split('=');
+    const palabas = searchData.split('%20');
+    let query = '';
+    if(palabas.length>1){
+        query = palabas.join(' ');
+    }else{
+        query = searchData;
+    }
+    
+    new Promise(function(resolve){
+        resolve(getMoviesBySearchObject.getMoviesBySearch(query));
+    }).then(function(results){
+        document.querySelector('.new-movies-btn').remove();
+        const closureUpcomingSearch = getMoviesBySearchObject.closureMoviesBySearch();
+        closureUpcomingSearch();
+        const btnSeeMore = document.createElement('button');
+        btnSeeMore.setAttribute('type','button');
+        btnSeeMore.textContent="See more";
+        btnSeeMore.classList.add('new-movies-btn');
+        btnSeeMore.addEventListener('click',function(){closureUpcomingSearch();});
+        nodes.list_movies.appendChild(btnSeeMore);
+    })
 }
 
 
