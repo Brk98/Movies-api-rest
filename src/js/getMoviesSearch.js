@@ -31,10 +31,12 @@ function closureMoviesBySearch(){
                     const movie = moviesList[index-1];
                     const movieContainer = document.createElement('div');
                     movieContainer.classList.add('movie');
-                    movieContainer.setAttribute('id',movie.id);
                     const movieImg = document.createElement('img');
                     movieImg.setAttribute('src',`${URL_IMAGE}${movie.poster_path}`);
                     movieContainer.appendChild(movieImg);
+                    movieContainer.addEventListener('click',function(){
+                        location.hash = 'movie=' + movie.id;
+                    });
                     nodes.list_movies_container.appendChild(movieContainer);
                     
                 }
