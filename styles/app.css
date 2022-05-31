@@ -58,7 +58,6 @@ body{
 .btn-return i{
     display: block;
     font-size: var(--big-text-size);
-    margin-right: 10em;
 }
 /*Header*/
 header{
@@ -149,6 +148,9 @@ input{
 input[type=text]:focus {
     border: 2px solid #555;
     padding-left: 1em;
+  }
+  input[type=text]:active {
+    min-height: 37px;
   }
   .btn-search{
     position: absolute;
