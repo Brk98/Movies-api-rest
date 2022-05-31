@@ -149,6 +149,9 @@ input[type=text]:focus {
     border: 2px solid #555;
     padding-left: 1em;
   }
+  input[type=text]:active {
+    min-height: 37px;
+  }
   .btn-search{
     position: absolute;
     right: 0;
