@@ -58,6 +58,7 @@ body{
 .btn-return i{
     display: block;
     font-size: var(--big-text-size);
+    margin-right: 10em;
 }
 /*Header*/
 header{
@@ -164,10 +165,10 @@ input[type=text]:focus {
 }
 .btn-search-cancel{
     position: absolute;
-    z-index: 2;
+    z-index: 3;
     height: 40%;
     width: 10%;
-    right: 35%;
+    right: 40%;
     bottom: 0;
     padding: 0;
     transform: translate(0, -35%);
