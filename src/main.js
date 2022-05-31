@@ -3,8 +3,6 @@ import { nodes } from "./js/nodes.js";
 
 
 
-
-
 nodes.search.addEventListener('click', function(){
     //remove default
     nodes.search.classList.remove('showDonwnSearch');
