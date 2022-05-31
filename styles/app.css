@@ -149,9 +149,6 @@ input[type=text]:focus {
     border: 2px solid #555;
     padding-left: 1em;
   }
-  input[type=text]:active {
-    min-height: 37px;
-  }
   .btn-search{
     position: absolute;
     right: 0;
@@ -210,6 +207,7 @@ section.carrusel{
   /*Top movies*/
   section.top-movies-container{
       width: 80%;
+      min-height: 352px;
       margin: 0 auto;
   }
   section.top-movies-container .top-movies-title{
