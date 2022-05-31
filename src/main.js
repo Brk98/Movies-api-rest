@@ -1,7 +1,9 @@
 import { pages } from "./js/navigatorPage.js";
 import { nodes } from "./js/nodes.js";
 
-
+setTimeout(()=>
+   document.querySelector("meta[name=viewport]").setAttribute("content", "height=" + screen.height*0.9 + "px, width=device-width, initial-scale=1.0")
+, 300);
 
 nodes.search.addEventListener('click', function(){
     //remove default
