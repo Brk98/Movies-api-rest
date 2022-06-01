@@ -1,14 +1,14 @@
 import{URL_IMAGE, api} from './apiAxios.js';
 import { nodes } from './nodes.js';
+import { getCatergoriesNames } from './getCategories.js';
 
 export async function getMovieDetail(id){
-    nodes.list_movies_title.textContent='Upcoming';
     nodes.movie_poster.innerHTML = "";
     nodes.movie_score.innerHTML = "";
     nodes.movie_title.innerHTML = "";
     nodes.movie_description.innerHTML = "";
+    nodes.movie_categories.innerHTML = "";
     const {data: movie} = await api(`movie/${id}`);
-    console.log(movie);
     nodes.movie_title.textContent = movie.title;
     nodes.movie_description.textContent = movie.overview;
     nodes.movie_poster_degrated.style = `background-image: url(https://image.tmdb.org/t/p/w500${movie.poster_path})`;
@@ -17,6 +17,7 @@ export async function getMovieDetail(id){
     nodes.movie_poster.appendChild(movieImg);
     nodes.movie_score_number.textContent = `Score: ${movie.vote_average}`
     getStarts(movie.vote_average);
+    categoriesRelated(movie.genres);
 
 
 
@@ -33,4 +34,20 @@ function getStarts(vote){
         const halfStar = nodes.movie_score_half_star.cloneNode(true);
         nodes.movie_score.appendChild(halfStar);
     }
+}
+
+function categoriesRelated(categories){
+    categories.forEach(category => {
+        const buttonCategory = document.createElement('button');
+        buttonCategory.type = 'button';
+        buttonCategory.classList.add('categories-button');
+        const categoryTitleText = document.createTextNode(category.name);
+        buttonCategory.appendChild(categoryTitleText);
+        nodes.movie_categories.appendChild(buttonCategory);
+        //Add evente listener to each category
+        buttonCategory.addEventListener('click',function(){
+            getCatergoriesNames(category.id);
+            location.hash = "#category=" + category.id + "-" + category.name;
+        });
+    });
 }

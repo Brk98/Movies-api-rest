@@ -46,3 +46,4 @@ function categorySelected(array, categoryId){
     array.splice(toIndex, 0, element);
     printCategories(array, categoryId);
 }
+

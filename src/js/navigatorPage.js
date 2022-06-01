@@ -26,7 +26,10 @@ function navigatorPage(){
         const [_, categoryData] = location.hash.split('=');
         const [categoryId, categoryName] = categoryData.split('-');
         getCatergoriesNames(Number(categoryId));
-        nodes.list_movies_title.textContent= `${categoryName}`;
+
+        const [__, nameCategory] = location.hash.split('-');
+        const [categoryN1, categoryN2 = ""] = nameCategory.split('%20');
+        nodes.list_movies_title.textContent= `${categoryN1} ${categoryN2}`;
         categoryPage();
     }else{
         homePage();
