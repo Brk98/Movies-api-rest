@@ -37,6 +37,7 @@ nodes.search.addEventListener('click', function(){
 });
 
 nodes.searchbox_btn_cancel.addEventListener('click', function(){
+  nodes.searchbox.value = '';
     //Remove animation
     nodes.searchbox.classList.remove('showDonwn');
     nodes.searchbox_btn.classList.remove('showDonwn');
@@ -53,6 +54,8 @@ nodes.searchbox_btn_cancel.addEventListener('click', function(){
 
 
 nodes.searchbox_btn.addEventListener('click', function(){
+    if(!nodes.searchbox.value == ''){
     location.hash = "search=" + nodes.searchbox.value.trim();
+    }
 });
 
