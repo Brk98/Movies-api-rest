@@ -1,0 +1,61 @@
+
+    body{
+        overflow-x: hidden;
+    }
+    /*Add top movies desktop*/
+    .mySwiper2{
+        display: block;
+    }
+    /*Search section*/
+    .btn-search{
+        min-height: 40px;
+        width: 10%;
+    }
+    .btn-search-cancel{
+        min-height: 40px;
+        width: 10%;
+        right: 10%;
+    }
+    .btn-search-cancel{
+        width: 5%;
+    }
+    input{
+        width: 33%;
+    }
+    /*Categories*/
+    div.categories-container{
+        min-height: 6rem;
+    }
+    section.top-movies-container{
+        width: 92vw;
+        min-height: 60vh;
+        max-height: 450px;
+    }
+    .mySwiper2{
+        position: relative;
+        width: 80%;
+        height: 60vh;
+    }
+    .mySwiper{
+        display: none;
+    }
+    .swiper-lap{
+        width: 350px;
+    }
+    .swiper-button-next:after{
+        position: absolute;
+    }
+/*Upcoming laptop*/
+section .new-movies{
+    grid-template-columns: repeat(auto-fill, minmax(max-content, 250px));
+    grid-template-rows: repeat(2, minmax(300px, max-content));
+    grid-auto-rows: minmax(300px, max-content);
+    place-content: center;
+    place-items: center;
+    gap: 2rem 3rem;
+}
+section .new-movies .movie img{
+    width: 95%;
+    height: 100%;
+    max-height: 300px;
+}

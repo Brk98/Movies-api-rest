@@ -5,6 +5,8 @@ const $ = (selector)=>document.querySelector(selector);
 
 
 export const nodes = {
+    // desktop or laptop
+    top_movies_pc: $('#topMoviesContainer2'),
     //Main page
     header:  $('header'),
     main_title: $('h2.title-categories'),

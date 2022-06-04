@@ -195,6 +195,7 @@ section.carrusel{
 .swiper {
     width: 60%;
     height: 45vh;
+    max-height: 250px;
   }
 
   .swiper-slide {
@@ -214,6 +215,7 @@ section.carrusel{
   section.top-movies-container{
       width: 80%;
       min-height: 352px;
+      max-height: 450px;
       margin: 0 auto;
   }
   section.top-movies-container .top-movies-title{
@@ -453,4 +455,9 @@ footer p{
 		opacity: 1;
 		transform: translate3d(0, -35%, 0);
 	}
+}
+
+/*Disabled desktop version*/
+.mySwiper2{
+    display: none;
 }

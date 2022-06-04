@@ -19,9 +19,18 @@ function closureUpcomingMovies(){
 
     function printUpcomingMovies(){
             counterMovies = moviesList.length;
-            let defaultIndex = 6;
+            const movieContainerWith = 300;
+            let defaultIndex = 0;
+            const screenWith = screen.width;
+            if(screenWith >= 850){
+                const moviesNumber = parseInt(screenWith/movieContainerWith);
+                defaultIndex = moviesNumber * 2;
+            }
+            else{
+                defaultIndex = 6;
+            }
             if(counterMovies<=5){
-                defaultIndex = counterMovies
+                defaultIndex = counterMovies; 
             }
             if(counterMovies > 0){
                 for (let index = 1; index <= defaultIndex; index++) {
@@ -38,7 +47,7 @@ function closureUpcomingMovies(){
                     nodes.list_movies_container.appendChild(movieContainer);
                     
                 }
-                moviesList.splice(0,6);
+                moviesList.splice(0,defaultIndex);
             }else{
                 nodes.list_movies_btn_see.textContent='No more...';
             }
