@@ -59,3 +59,24 @@ section .new-movies .movie img{
     height: 100%;
     max-height: 300px;
 }
+/*Movie details*/
+.container-degraded img{
+    max-width: 250px;
+    width: 100%;
+}
+/*Btn return*/
+.btn-return{
+    width: 5%;
+}
+.container-tittle-ranking, .containder-categoriesMovies{
+    width: 50%;
+    margin: 2rem auto;
+}
+h3.descriptionMovie{
+    width: 50%;
+    margin: 2rem auto;
+}
+p.description{
+    width: 50%;
+    margin: 2rem auto;
+}

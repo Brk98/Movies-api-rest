@@ -103,7 +103,7 @@ function showSearchPage(){
     hideMainPage();
     hideMoviePage()
     nodes.list_movies.classList.remove('disabled');
-    nodes.list_movies_title.classList.add('disabled');
+    nodes.list_movies_title.textContent="";
     nodes.header.classList.remove('disabled');
 
     nodes.search_container.classList.remove('disabled');
