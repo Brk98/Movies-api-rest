@@ -195,7 +195,6 @@ section.carrusel{
 .swiper {
     width: 60%;
     height: 45vh;
-    max-height: 250px;
   }
 
   .swiper-slide {
